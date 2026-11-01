@@ -1,4 +1,5 @@
-# EmoDiffPure
+# EmoDiffPure: Diffusion Purification for Robust Speech Emotion Recognition
+
 Prosody-conditioned DiffWave diffusion purification as a defence against adversarial perturbations for Speech Emotion Recognition (SER) on IEMOCAP.
 
 ## Overview
