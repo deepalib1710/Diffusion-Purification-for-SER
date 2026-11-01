@@ -47,8 +47,5 @@ emotion information.
 IEMOCAP is not included. Request access from the dataset authors and place it locally.
 Paths in the notebook point to Google Drive and need editing for your setup.
 
-## Status
-Research code exported from Colab. A cleaned, scripted version is planned.
-
 ## Licence
 To be decided.
