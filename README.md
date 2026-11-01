@@ -19,9 +19,28 @@ Prosody-conditioned DiffWave diffusion purification as a defence against adversa
 - Matched conditioning beats zero conditioning by 4.7 pp (95% CI 2.8 to 6.9).
 - Adaptive attack runs (N = 30 and N = 100) are inconclusive.
 
+## How it works
+
+1. **Input:** a 4 s, 16 kHz speech clip. An attacker may have added a tiny perturbation
+   (PGD-10, eps 0.008) so that the emotion classifier gets it wrong.
+2. **Conditioning:** HuBERT-Base features (768-D) and pYIN pitch (F0) are extracted from the
+   incoming audio and combined into a 769-D conditioning vector.
+3. **Purification:** the clip is noised with the diffusion forward process in one jump to
+   start index t* = 3 (noise std 0.0806), then DiffWave denoises it in 4 reverse steps,
+   guided by the conditioning vector.
+4. **Classification:** a CNN-BiLSTM with attention predicts one of four emotions
+   (neutral, happy, sad, angry) from the purified audio. The classifier is fine-tuned on a
+   50/50 mix of clean and purified audio, with the purifier frozen.
+5. **Control:** the noise-only defence runs step 3 without the denoiser (same noise, no network).
+   Comparing against it shows how much of the defence comes from the noise and how much
+   from the denoiser.
+
+Why the control matters: in our results the noise-only defence beats the full purifier, so
+most of the robustness comes from the injected noise and the denoiser's reconstruction loses
+emotion information.
+
 ## Repository contents
 - `notebooks/` project notebook
-- `demo/` live-demo cells
 
 ## Data
 IEMOCAP is not included. Request access from the dataset authors and place it locally.
