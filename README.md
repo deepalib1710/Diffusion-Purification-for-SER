@@ -1,8 +1,5 @@
-# EmoDiffPure2
-Prosody-conditioned DiffWave diffusion purification as a defence against adversarial perturbations for Speech Emotion Recognition (SER) on IEMOCAP.
 # EmoDiffPure
-
-Prosody-conditioned diffusion purification as a defence for Speech Emotion Recognition (SER) on IEMOCAP.
+Prosody-conditioned DiffWave diffusion purification as a defence against adversarial perturbations for Speech Emotion Recognition (SER) on IEMOCAP.
 
 ## Overview
 - Classifier: CNN-BiLSTM with attention, four emotion classes, 16 kHz audio, 4 s clips.
