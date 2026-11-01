@@ -40,7 +40,7 @@ most of the robustness comes from the injected noise and the denoiser's reconstr
 emotion information.
 
 ## Repository contents
-- `notebooks/` project notebook
+- Research is still in progress therefore complete implementation and code details will be updated in due time.
 
 ## Data
 IEMOCAP is not included. Request access from the dataset authors and place it locally.
