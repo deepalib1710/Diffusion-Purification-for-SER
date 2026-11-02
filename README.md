@@ -3,7 +3,7 @@
 Prosody-conditioned DiffWave diffusion purification as a defence against adversarial perturbations for Speech Emotion Recognition (SER) on IEMOCAP.
 
 ## Repository contents
-- Research is still in progress, therefore, the code and implementation details will be updated in due time.
+Research is still in progress, therefore, the code and implementation details will be updated in due time.
 
 ## Overview
 - Classifier: CNN-BiLSTM with attention, four emotion classes, 16 kHz audio, 4s clips.
