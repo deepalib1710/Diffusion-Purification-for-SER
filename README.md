@@ -2,8 +2,11 @@
 
 Prosody-conditioned DiffWave diffusion purification as a defence against adversarial perturbations for Speech Emotion Recognition (SER) on IEMOCAP.
 
+## Repository contents
+- Research is still in progress, therefore, the code and implementation details will be updated in due time.
+
 ## Overview
-- Classifier: CNN-BiLSTM with attention, four emotion classes, 16 kHz audio, 4 s clips.
+- Classifier: CNN-BiLSTM with attention, four emotion classes, 16 kHz audio, 4s clips.
 - Purifier: DiffWave conditioned on HuBERT-Base features and pYIN F0.
 - Attacks: PGD-10 (eps 0.008) and adaptive EoT-PGD.
 - Control: a Gaussian noise-only defence that adds the same noise but skips the denoiser.
@@ -22,7 +25,7 @@ Prosody-conditioned DiffWave diffusion purification as a defence against adversa
 
 ## How it works
 
-1. **Input:** a 4 s, 16 kHz speech clip. An attacker may have added a tiny perturbation
+1. **Input:** a 4s, 16 kHz speech clip. An attacker may have added a tiny perturbation
    (PGD-10, eps 0.008) so that the emotion classifier gets it wrong.
 2. **Conditioning:** HuBERT-Base features (768-D) and pYIN pitch (F0) are extracted from the
    incoming audio and combined into a 769-D conditioning vector.
@@ -39,9 +42,6 @@ Prosody-conditioned DiffWave diffusion purification as a defence against adversa
 Why the control matters: in our results the noise-only defence beats the full purifier, so
 most of the robustness comes from the injected noise and the denoiser's reconstruction loses
 emotion information.
-
-## Repository contents
-- Research is still in progress, therefore, the code and implementation details will be updated in due time.
 
 ## Data
 IEMOCAP is not included. Request access from the dataset authors and place it locally.
